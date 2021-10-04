@@ -1,13 +1,12 @@
-// Application dependencies
-import { Request, Response } from "express";
-
-import { Color } from "./app/models/Color";
-import { ColorDAO } from "./app/database/ColorDAO";
-
 // Create instance of an Express Application on Port 3000
 const express = require("express");
 const app = express();
 const port = 3000;
+
+// Application dependencies
+import { Request, Response } from "express";
+import { Color } from "./app/models/Color";
+import { ColorDAO } from "./app/database/ColorDAO";
 
 // Database configuration
 const dbHost = "localhost";
@@ -121,5 +120,9 @@ app.delete("/colors/:id", function (req: Request, res: Response) {
 });
 
 app.listen(3000, () => {
-  console.log("Started Color Collection on Port 3000");
+  console.log("Started Color Collection on port 3000");
 });
+
+// app.listen(process.env.PORT, () => {
+//   console.log("Started Color Collection on port " + process.env.PORT);
+// });
