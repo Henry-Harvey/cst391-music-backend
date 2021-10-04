@@ -32,6 +32,6 @@
     "@types/express": "^4.17.13",
     "@types/mysql": "^2.15.17",
     "@types/node": "^14.14.22",
-    "typescript": "^3.2.2"
+    "typescript": "^3.9.10"
   }
 }
