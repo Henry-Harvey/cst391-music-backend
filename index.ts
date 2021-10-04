@@ -9,10 +9,10 @@ import { Color } from "./app/models/Color";
 import { ColorDAO } from "./app/database/ColorDAO";
 
 // Database configuration
-const dbHost = "localhost";
-const dbPort = 3306;
-const dbUsername = "root";
-const dbPassword = "root";
+const dbHost = "us-cdbr-east-04.cleardb.com";
+// const dbPort = 3306;
+const dbUsername = "b6edda3ad03e90";
+const dbPassword = "6d063e29";
 
 // Use the Port JSON Body Parser
 const bodyParser = require("body-parser");

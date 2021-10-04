@@ -11,11 +11,11 @@ export class ColorDAO {
   private pool: any;
 
   constructor() {
-    this.host = "localhost";
+    this.host = "us-cdbr-east-04.cleardb.com";
     this.port = 3306;
-    this.username = "root";
-    this.password = "root";
-    this.schema = "color_collection";
+    this.username = "b6edda3ad03e90";
+    this.password = "6d063e29";
+    this.schema = "heroku_b2065b1afda59db";
     this.pool = this.initDbConnection();
   }
 
