@@ -19,6 +19,7 @@ export class ColorDAO {
     this.pool = this.initDbConnection();
   }
 
+  // Initializes connection to the database
   private initDbConnection(): any {
     return mysql.createPool({
       host: this.host,
@@ -30,6 +31,7 @@ export class ColorDAO {
     });
   }
 
+  // Creates a color in the database
   public createColor(color: Color, callback: any) {
     this.pool.getConnection(async (err: any, connection: any) => {
       connection.release();
@@ -46,6 +48,7 @@ export class ColorDAO {
     });
   }
 
+  // Reads a color from the database
   public readColor(id: string, callback: any) {
     this.pool.getConnection(async function (err: any, connection: any) {
       connection.release();
@@ -70,6 +73,7 @@ export class ColorDAO {
     });
   }
 
+  // Reads all of the colors from the database
   public readAllColors(callback: any) {
     this.pool.getConnection(async function (err: any, connection: any) {
       connection.release();
@@ -91,6 +95,7 @@ export class ColorDAO {
     });
   }
 
+  // Updates a color in the database
   public updateColor(color: Color, callback: any) {
     this.pool.getConnection(async (err: any, connection: any) => {
       connection.release();
@@ -107,6 +112,7 @@ export class ColorDAO {
     });
   }
 
+  // Deletes a color from the database
   public deleteColor(id: string, callback: any) {
     this.pool.getConnection(async function (err: any, connection: any) {
       connection.release();
