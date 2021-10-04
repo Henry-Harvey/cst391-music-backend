@@ -119,10 +119,12 @@ app.delete("/colors/:id", function (req: Request, res: Response) {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Started Color Collection on port 3000");
-});
-
-// app.listen(process.env.PORT, () => {
-//   console.log("Started Color Collection on port " + process.env.PORT);
-// });
+if (typeof process.env.PORT === "undefined") {
+  app.listen(3000, () => {
+    console.log("Started Color Collection on port 3000");
+  });
+} else {
+  app.listen(process.env.PORT, () => {
+    console.log("Started Color Collection on port " + process.env.PORT);
+  });
+}
