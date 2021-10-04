@@ -120,6 +120,6 @@ app.delete("/colors/:id", function (req: Request, res: Response) {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Started Color Collection on Port 3000");
+app.listen(process.env.PORT, () => {
+    console.log(server started on port ${process.env.PORT})
 });
