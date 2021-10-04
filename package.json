@@ -6,8 +6,8 @@
   "scripts": {
     "start1": "nodemon -e js,ts --watch ./index.js --watch app --ignore 'lib/*' --exec 'npm run build && node ./index.ts' ",
     "debug1": "nodemon -e js,ts --watch ./index.js --watch app --ignore 'lib/*' --exec 'npm run build && node --inspect ./index.ts' ",
-    "start": "ts-node ./index.ts",
-    "debug": "ts-node --inspect ./index.ts",
+    "start": "nodemon ./index.ts",
+    "debug": "nodemon --inspect ./index.ts",
     "build": "babel app --out-dir lib/app --extensions \".ts,.tsx\" --source-maps inline"
   },
   "author": "",
