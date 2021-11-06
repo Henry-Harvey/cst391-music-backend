@@ -9,7 +9,7 @@ import { MusicDAO } from "./app/database/MusicDAO";
 // Create instance of an Express Application on Port 3000
 const express = require("express");
 const app = express();
-//const port = process.env.PORT || 3000;
+const port = 3000;
 
 // Database configuration
 const dbHost = "us-cdbr-east-04.cleardb.com";
