@@ -21,6 +21,13 @@ const dbPassword = "6dee523b";
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+// GET Route at '/' that returns a test string
+app.get("/", function (req: Request, res: Response) {
+  console.log("In GET / Route");
+  // res.json("Express Color Index Test");
+  res.send("Music Backend Test");
+});
+
 // POST ROUTE at '/albums' that adds an Album and its Tracks to the database
 app.post("/albums", function (req: Request, res: Response) {
   res.header("Access-Control-Allow-Origin", "*");
