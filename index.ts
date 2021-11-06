@@ -12,10 +12,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Database configuration
-const dbHost = "localhost";
-const dbPort = 3306;
-const dbUsername = "root";
-const dbPassword = "root";
+const dbHost = "us-cdbr-east-04.cleardb.com";
+//const dbPort = 3306;
+const dbUsername = "ba82035eec0682";
+const dbPassword = "6dee523b";
 
 // Use the Port JSON Body Parser
 const bodyParser = require("body-parser");
