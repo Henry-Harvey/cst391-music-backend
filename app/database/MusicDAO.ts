@@ -13,11 +13,11 @@ export class MusicDAO {
   private pool: any;
 
   constructor() {
-    this.host = "localhost";
-    this.port = 3306;
-    this.username = "root";
-    this.password = "root";
-    this.schema = "music";
+    this.host = "us-cdbr-east-04.cleardb.com";
+    //this.port = 3306;
+    this.username = "ba82035eec0682";
+    this.password = "6dee523b";
+    this.schema = "heroku_11dd3af44eab17c";
     this.pool = this.initDbConnection();
   }
 
