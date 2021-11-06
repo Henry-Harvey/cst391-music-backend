@@ -22,7 +22,6 @@ export class MusicDAO {
   private initDbConnection(): any {
     return mysql.createPool({
       host: this.host,
-      port: this.port,
       user: this.username,
       password: this.password,
       database: this.schema,
