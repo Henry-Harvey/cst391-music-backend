@@ -6,7 +6,6 @@ import * as util from "util";
 
 export class MusicDAO {
   private host: string;
-  private port: number;
   private username: string;
   private password: string;
   private schema: string;
@@ -14,7 +13,6 @@ export class MusicDAO {
 
   constructor() {
     this.host = "us-cdbr-east-04.cleardb.com";
-    //this.port = 3306;
     this.username = "ba82035eec0682";
     this.password = "6dee523b";
     this.schema = "heroku_11dd3af44eab17c";
