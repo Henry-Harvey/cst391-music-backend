@@ -6,6 +6,7 @@ export class Album {
   artist: string = "";
   description: string = "";
   year: number = -1;
+  image_name: string = "";
   tracks: Track[];
 
   constructor(
@@ -14,6 +15,7 @@ export class Album {
     artist: string,
     description: string,
     year: number,
+    image_name: string,
     tracks: Track[]
   ) {
     this.id = id;
@@ -21,6 +23,7 @@ export class Album {
     this.artist = artist;
     this.description = description;
     this.year = year;
+    this.image_name = image_name;
     this.tracks = tracks;
   }
 }

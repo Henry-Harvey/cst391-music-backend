@@ -70,7 +70,13 @@ export class MusicDAO {
       let tracks: Track[] = [];
       resultTracks.map(async (track: any) => {
         tracks.push(
-          new Track(track.ID, track.TITLE, track.NUMBER, track.LYRICS)
+          new Track(
+            track.ID,
+            track.TITLE,
+            track.NUMBER,
+            track.LYRICS,
+            track.VIDEO_URL
+          )
         );
       });
 
@@ -85,6 +91,7 @@ export class MusicDAO {
         resultAlbum[0].ARTIST,
         resultAlbum[0].DESCRIPTION,
         resultAlbum[0].YEAR,
+        resultAlbum[0].IMAGE_NAME,
         tracks
       );
       callback(album);
@@ -113,7 +120,13 @@ export class MusicDAO {
           let tracks: Track[] = [];
           resultTracks.map(async (track: any) => {
             tracks.push(
-              new Track(track.ID, track.TITLE, track.NUMBER, track.LYRICS)
+              new Track(
+                track.ID,
+                track.TITLE,
+                track.NUMBER,
+                track.LYRICS,
+                track.VIDEO_URL
+              )
             );
           });
           albums.push(
@@ -123,6 +136,7 @@ export class MusicDAO {
               album.ARTIST,
               album.DESCRIPTION,
               album.YEAR,
+              album.IMAGE_NAME,
               tracks
             )
           );
@@ -155,7 +169,13 @@ export class MusicDAO {
           let tracks: Track[] = [];
           resultTracks.map(async (track: any) => {
             tracks.push(
-              new Track(track.ID, track.TITLE, track.NUMBER, track.LYRICS)
+              new Track(
+                track.ID,
+                track.TITLE,
+                track.NUMBER,
+                track.LYRICS,
+                track.VIDEO_URL
+              )
             );
           });
           albums.push(
@@ -165,6 +185,7 @@ export class MusicDAO {
               album.ARTIST,
               album.DESCRIPTION,
               album.YEAR,
+              album.IMAGE_NAME,
               tracks
             )
           );
@@ -194,7 +215,13 @@ export class MusicDAO {
           let tracks: Track[] = [];
           resultTracks.map(async (track: any) => {
             tracks.push(
-              new Track(track.ID, track.TITLE, track.NUMBER, track.LYRICS)
+              new Track(
+                track.ID,
+                track.TITLE,
+                track.NUMBER,
+                track.LYRICS,
+                track.VIDEO_URL
+              )
             );
           });
           albums.push(
@@ -204,6 +231,7 @@ export class MusicDAO {
               album.ARTIST,
               album.DESCRIPTION,
               album.YEAR,
+              album.IMAGE_NAME,
               tracks
             )
           );

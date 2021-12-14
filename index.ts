@@ -21,10 +21,20 @@ const dbPassword = "6dee523b";
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+app.use(function (req: Request, res: Response, next: any) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 // GET Route at '/' that returns a test string
 app.get("/", function (req: Request, res: Response) {
   console.log("In GET / Route");
-  // res.json("Express Color Index Test");
   res.send("Music Backend Test");
 });
 
