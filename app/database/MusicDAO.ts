@@ -37,13 +37,13 @@ export class MusicDAO {
       let albumId: number;
 
       await connection.query(
-        `INSERT INTO ALBUM (TITLE, ARTIST, YEAR, IMAGE_NAME, DESCRIPTION) VALUES ("${album.title}", "${album.artist}", ${album.year}, "1.jpg", "${album.description}")`,
+        `INSERT INTO ALBUM (TITLE, ARTIST, YEAR, IMAGE_NAME, DESCRIPTION) VALUES ("${album.title}", "${album.artist}", ${album.year}, ${album.image_name}, "${album.description}")`,
         (err: any, result: any) => {
           if (err) throw err;
           albumId = result.insertId;
           album.tracks.map(async (track: any) => {
             connection.query(
-              `INSERT INTO TRACK (ALBUM_ID, TITLE, NUMBER, VIDEO_URL, LYRICS) VALUES ("${albumId}", "${track.title}", "${track.number}", "https://video123456.com", "${track.lyrics}")`,
+              `INSERT INTO TRACK (ALBUM_ID, TITLE, NUMBER, VIDEO_URL, LYRICS) VALUES ("${albumId}", "${track.title}", "${track.number}", ${track.video_url}, "${track.lyrics}")`,
               (err: any, result: any) => {
                 if (err) throw err;
               }
@@ -269,12 +269,12 @@ export class MusicDAO {
       if (err) throw err;
 
       await connection.query(
-        `UPDATE ALBUM SET TITLE = "${album.title}", ARTIST = "${album.artist}", YEAR = "${album.year}", IMAGE_NAME = "1.png", DESCRIPTION = "${album.description}" WHERE ID = "${album.id}"`,
+        `UPDATE ALBUM SET TITLE = "${album.title}", ARTIST = "${album.artist}", YEAR = "${album.year}", IMAGE_NAME = "${album.image_name}", DESCRIPTION = "${album.description}" WHERE ID = "${album.id}"`,
         (err: any, result: any) => {
           if (err) throw err;
           album.tracks.map(async (track: any) => {
             connection.query(
-              `UPDATE TRACK SET TITLE = "${track.title}", NUMBER = "${track.number}", VIDEO_URL = "https://video54321.com", LYRICS = "${track.lyrics}" WHERE ID = "${track.id}"`,
+              `UPDATE TRACK SET TITLE = "${track.title}", NUMBER = "${track.number}", VIDEO_URL = "${track.video_url}"", LYRICS = "${track.lyrics}" WHERE ID = "${track.id}"`,
               (err: any, result: any) => {
                 if (err) throw err;
               }
