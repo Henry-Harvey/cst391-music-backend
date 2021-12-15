@@ -37,13 +37,13 @@ export class MusicDAO {
       let albumId: number;
 
       await connection.query(
-        `INSERT INTO ALBUM (TITLE, ARTIST, YEAR, IMAGE_NAME, DESCRIPTION) VALUES ("${album.title}", "${album.artist}", ${album.year}, ${album.image_name}, "${album.description}")`,
+        `INSERT INTO ALBUM (TITLE, ARTIST, YEAR, IMAGE_NAME, DESCRIPTION) VALUES ("${album.title}", "${album.artist}", ${album.year}, "${album.image_name}", "${album.description}")`,
         (err: any, result: any) => {
           if (err) throw err;
           albumId = result.insertId;
           album.tracks.map(async (track: any) => {
             connection.query(
-              `INSERT INTO TRACK (ALBUM_ID, TITLE, NUMBER, VIDEO_URL, LYRICS) VALUES ("${albumId}", "${track.title}", "${track.number}", ${track.video_url}, "${track.lyrics}")`,
+              `INSERT INTO TRACK (ALBUM_ID, TITLE, NUMBER, VIDEO_URL, LYRICS) VALUES ("${albumId}", "${track.title}", "${track.number}", "${track.video_url}", "${track.lyrics}")`,
               (err: any, result: any) => {
                 if (err) throw err;
               }
